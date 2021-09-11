@@ -1,4 +1,4 @@
-# A Nix template on Gitpod
+# A Nix template for agoric-sdk on Gitpod
 
 This is a [nix](https://nixos.org/manual/nix/stable/) template configured for ephemeral nix based development environments on [Gitpod](https://www.gitpod.io/).
 
