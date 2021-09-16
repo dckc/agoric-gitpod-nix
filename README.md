@@ -1,25 +1,31 @@
-# A Nix template for agoric-sdk on Gitpod
+<img src="https://user-images.githubusercontent.com/273868/115044279-34983d80-9e8a-11eb-81dc-474764b0ed5b.png" alt="banner-1500x500" height="200" />
 
-This is a [nix](https://nixos.org/manual/nix/stable/) template configured for ephemeral nix based development environments on [Gitpod](https://www.gitpod.io/).
+# agoric-sdk on Gitpod: zero-install BLD tools
 
-## Next Steps
-
-Click the button below to start a new development environment:
+You want to [Build Fast, Earn Fast&trade;](https://agoric.com/develop/)? If you don't want to [install the dependencies on your workstation](https://agoric.com/documentation/getting-started/before-using-agoric.html), **use the button below to start a new development environment:**
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/dckc/agoric-gitpod-nix)
 
-## Get Started With Your Own Project
+## Next: activate the environment
 
-### A new project
+```console
+direnv allow
+```
 
-Click the above "Open in Gitpod" button to start a new workspace. Once you're ready to push your first code changes, Gitpod will guide you to fork this project so you own it.
+## Agoric Docs
 
-### An existing project
+See:
 
-To get started with nix on Gitpod, copy the contents of this foler to your own project. To learn more, please see the [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
+ - [Starting a Project \| Beta](https://agoric.com/documentation/getting-started/start-a-project.html)
 
-## Notes & caveats
 
-When the environment first starts up use the `direnv allow` command to activate the environment.
+## Your Own Project
 
-See also: [An opinionated guide for developers getting things done using the Nix ecosystem](https://nix.dev/).
+Once you're ready to **push your first code changes**, Gitpod will guide you to **fork this project** so you own it.
+
+## Powered by...
+
+ - [Gitpod \- Always ready to code](https://www.gitpod.io/)
+   - [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
+ - [Nix development environment](https://nixos.org/guides/dev-environment.html)
+   - See also: [An opinionated guide for developers getting things done using the Nix ecosystem](https://nix.dev/).
