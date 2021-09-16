@@ -25,6 +25,7 @@ Once you're ready to **push your first code changes**, Gitpod will guide you to 
 
 ## Powered by...
 
+ - [Agoric/agoric\-sdk: monorepo for the Agoric Javascript smart contract platform](https://github.com/Agoric/agoric-sdk)
  - [Gitpod \- Always ready to code](https://www.gitpod.io/)
    - [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
  - [Nix development environment](https://nixos.org/guides/dev-environment.html)
