@@ -34,3 +34,22 @@ RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
   && nix-env -i direnv \
   && direnv hook bash >> /home/gitpod/.bashrc
+
+# Install agoric-sdk
+# ISSUE: where to put bin/agoric? npm install -g stuff seems to go in /nix, which is not writeable
+#   meanwhile, abuse .cargo/bin
+RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
+  && nix-env -i nodejs yarn go \
+  && git clone https://github.com/Agoric/agoric-sdk \
+  && cd agoric-sdk \
+  && yarn install \
+  && yarn build \
+  && yarn link-cli /workspace/.cargo/bin/agoric
+
+# Check out demo
+# ISSUE: hard-code agoric-gitpod-nix?
+RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
+  && cd /workspace/agoric-gitpod-nix \
+  && /usr/local/bin/agoric init demo \
+  && cd demo \
+  && agoric install
