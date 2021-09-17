@@ -2,9 +2,14 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: >
-      mkdir -p /home/gitpod/.config/nix &&
-      echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf
+      # Install agoric-sdk
+      git clone https://github.com/Agoric/agoric-sdk
+      cd agoric-sdk && yarn install && yarn build
+      mkdir -p ~/bin
+      cd agoric-sdk && yarn link-cli ~/bin/agoric
 
-vscode:
-  extensions:
-    - bbenoist.Nix
+      # TODO: Check out demo?
+
+# vscode:
+#   extensions:
+#    - bbenoist.Nix
