@@ -6,11 +6,17 @@ You want to [Build Fast, Earn Fast&trade;](https://agoric.com/develop/)? If you 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/dckc/agoric-gitpod-nix)
 
-## Next: activate the environment
+## Agoric Dapp Workflow
 
-```console
-direnv allow
-```
+The workspace starts with 3 terminals:
+
+ - Start Project
+ - Start the Agoric VM
+ - Deploy the Dapp
+
+The Agoric VM and Dapp start and continue to run. In the **Start
+Project** terminal, you can run commands such as `agoric open` to open
+the wallet.
 
 ## Agoric Docs
 
@@ -28,5 +34,3 @@ Once you're ready to **push your first code changes**, Gitpod will guide you to 
  - [Agoric/agoric\-sdk: monorepo for the Agoric Javascript smart contract platform](https://github.com/Agoric/agoric-sdk)
  - [Gitpod \- Always ready to code](https://www.gitpod.io/)
    - [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
- - [Nix development environment](https://nixos.org/guides/dev-environment.html)
-   - See also: [An opinionated guide for developers getting things done using the Nix ecosystem](https://nix.dev/).
