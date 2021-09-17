@@ -8,12 +8,21 @@ image:
 tasks:
   - name: Start Project
     init: |
-      cd /workspace && ~/bin/agoric init demo
-      cd /workspace/demo && ~/bin/agoric install
-  - name: Start the Agoric VM.
-    command: cd /workspace/demo && ~/bin/agoric start --reset
+      cd $THEIA_WORKSPACE_ROOT
+      agoric init demo
+      cd demo
+      agoric install
+      gp sync-done install
+  - name: Start the Agoric VM
+    init: gp sync-await install
+    command: |
+      cd $THEIA_WORKSPACE_ROOT/demo
+      agoric start --reset
   - name: Deploy the Dapp
-    command: cd /workspace/demo && ~/bin/agoric deploy ./contract/deploy.js ./api/deploy.js
+    init: gp sync-await install
+    command: |
+      cd $THEIA_WORKSPACE_ROOT/demo
+      agoric deploy ./contract/deploy.js ./api/deploy.js
 
 # vscode:
 #   extensions:
