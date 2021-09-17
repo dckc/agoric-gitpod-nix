@@ -6,10 +6,6 @@ image:
 # Starting a Project
 # Ref: https://agoric.com/documentation/getting-started/start-a-project.html
 tasks:
-  - name: Install Agoric SDK
-    init: |
-      cd /workspace && git clone https://github.com/Agoric/agoric-sdk
-      cd /workspace/agoric-sdk && yarn install && yarn build && yarn link-cli ~/bin/agoric
   - name: Start Project
     init: |
       cd /workspace && ~/bin/agoric init demo

@@ -19,4 +19,12 @@ RUN . $HOME/.nvm/nvm.sh && nvm use --lts && npm install -g yarn
 RUN mkdir -p $HOME/bin
 ENV PATH="$HOME/bin:$PATH"
 
+# Install Agoric SDK
+RUN pwd
+RUN git clone https://github.com/Agoric/agoric-sdk
+RUN cd agoric-sdk \
+    && . $HOME/.nvm/nvm.sh && nvm use --lts \
+    && yarn install && yarn build \
+    && yarn link-cli ~/bin/agoric
+
 USER root
