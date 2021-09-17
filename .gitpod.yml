@@ -1,14 +1,23 @@
+# "Before Using Agoric" dependencies are set up with Docker
+# https://agoric.com/documentation/getting-started/before-using-agoric.html
 image:
   file: .gitpod.Dockerfile
-tasks:
-  - init: >
-      # Install agoric-sdk
-      git clone https://github.com/Agoric/agoric-sdk
-      cd agoric-sdk && yarn install && yarn build
-      mkdir -p ~/bin
-      cd agoric-sdk && yarn link-cli ~/bin/agoric
 
-      # TODO: Check out demo?
+# Starting a Project
+# Ref: https://agoric.com/documentation/getting-started/start-a-project.html
+tasks:
+  - name: Install Agoric SDK
+    init: |
+      cd /workspace && git clone https://github.com/Agoric/agoric-sdk
+      cd /workspace/agoric-sdk && yarn install && yarn build && yarn link-cli ~/bin/agoric
+  - name: Start Project
+    init: |
+      cd /workspace && ~/bin/agoric init demo
+      cd /workspace/demo && ~/bin/agoric install
+  - name: Start the Agoric VM.
+    command: cd /workspace/demo && ~/bin/agoric start --reset
+  - name: Deploy the Dapp
+    command: cd /workspace/demo && ~/bin/agoric deploy ./contract/deploy.js ./api/deploy.js
 
 # vscode:
 #   extensions:
