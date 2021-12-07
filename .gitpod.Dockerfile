@@ -22,7 +22,7 @@ ENV PATH="$HOME/bin:$PATH"
 # Install Agoric SDK
 RUN pwd
 # TODO: go back to master when https://github.com/Agoric/agoric-sdk/pull/3838 lands
-RUN git clone -b mfig-ignore-solo-web-origin https://github.com/Agoric/agoric-sdk
+RUN git clone https://github.com/Agoric/agoric-sdk
 RUN cd agoric-sdk \
     && . $HOME/.nvm/nvm.sh && nvm use --lts \
     && yarn install && yarn build \
