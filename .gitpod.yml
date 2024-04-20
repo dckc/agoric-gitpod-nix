@@ -9,12 +9,17 @@ tasks:
 
 ports:
   - port: 26656
+    name: gRPC
     onOpen: ignore
   - port: 26657
+    name: RPC
     onOpen: ignore
+    visibility: public
   - port: 1317
+    name: API
     onOpen: ignore
-  - port: 3000
+  - port: 5173
+    name: ui
     onOpen: open-preview
 
 vscode:
