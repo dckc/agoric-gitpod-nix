@@ -2,6 +2,10 @@
 
 # agoric-sdk on Gitpod: zero-install BLD tools
 
+## WIP
+
+_everything below is outdated_
+
 You want to [Build Fast, Earn Fast&trade;](https://agoric.com/develop/)? If you don't want to [install the dependencies on your workstation](https://agoric.com/documentation/getting-started/before-using-agoric.html), **use the button below to start a new development environment:**
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/dckc/agoric-gitpod-nix)

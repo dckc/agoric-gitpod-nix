@@ -6,23 +6,9 @@ image:
 # Starting a Project
 # Ref: https://agoric.com/documentation/getting-started/start-a-project.html
 tasks:
-  - name: Start Project
-    init: |
-      cd $THEIA_WORKSPACE_ROOT
-      agoric init demo
-      cd demo
-      agoric install
-      gp sync-done install
-  - name: Start the Agoric VM
-    init: gp sync-await install
-    command: |
-      cd $THEIA_WORKSPACE_ROOT/demo
-      agoric start --reset
-  - name: Deploy the Dapp
-    init: gp sync-await install
-    command: |
-      cd $THEIA_WORKSPACE_ROOT/demo
-      agoric deploy ./contract/deploy.js ./api/deploy.js
+  - name: Start agd
+    init: /workspace/contract/scripts/run-chain.sh
+
 
 # vscode:
 #   extensions:
