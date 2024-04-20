@@ -1,15 +1,22 @@
-# "Before Using Agoric" dependencies are set up with Docker
-# https://agoric.com/documentation/getting-started/before-using-agoric.html
-image:
-  file: .gitpod.Dockerfile
-
-# Starting a Project
-# Ref: https://agoric.com/documentation/getting-started/start-a-project.html
+# cribbed from
+# https://github.com/gitpod-samples/template-docker-compose/blob/main/.gitpod.yml
 tasks:
-  - name: Start agd
-    init: /workspace/contract/scripts/run-chain.sh
+  - init: |
+      docker-compose pull
+  - command: |
+      docker-compose up
 
 
-# vscode:
-#   extensions:
-#    - bbenoist.Nix
+ports:
+  - port: 26656
+    onOpen: ignore
+  - port: 26657
+    onOpen: ignore
+  - port: 1317
+    onOpen: ignore
+  - port: 3000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
